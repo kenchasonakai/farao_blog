@@ -10,11 +10,11 @@ services:
     ports:
       - 3307:3306
   web:
-    build: .
-    # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    environment:
-      RAILS_ENV: development
-      BUNDLE_WITHOUT: production
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     tty: true
     stdin_open: true
     volumes:
@@ -23,6 +23,9 @@ services:
       - node_modules:/app/node_modules
     environment:
       TZ: Asia/Tokyo
+      RAILS_ENV: development
+      BUNDLE_DEPLOYMENT: "0"
+      BUNDLE_WITHOUT: "production"
     ports:
       - "3000:3000"
     depends_on:
