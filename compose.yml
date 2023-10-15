@@ -26,6 +26,8 @@ services:
       RAILS_ENV: development
       BUNDLE_DEPLOYMENT: "0"
       BUNDLE_WITHOUT: "production"
+      BUNDLE_PATH: "/usr/local/bundle"
+
     ports:
       - "3000:3000"
     depends_on:
