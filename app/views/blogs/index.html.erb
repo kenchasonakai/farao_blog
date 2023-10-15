@@ -9,7 +9,7 @@
           <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
             <%= link_to blog.title, "#", class: "hover:underline" %>
           </h4>
-          <span class="text-gray-600 dark:text-gray-300 text-sm ml-1">blog.created_at</span>
+          <span class="text-gray-600 dark:text-gray-300 text-sm ml-1"><%= l(blog.created_at, formats: :long) %></span>
         </div>
       </div>
       <div class="mt-1">
