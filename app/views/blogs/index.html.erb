@@ -1,13 +1,13 @@
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
   <% @blogs.each do |blog| %>
     <div class="max-w-sm p-6 rounded-lg">
-      <%= link_to "#" do %>
+      <%= link_to blog do %>
         <%= image_tag 'ogp_base.png', class: "h-auto max-w-full rounded-lg" %>
       <% end %>
       <div class="mt-1">
         <div class="flex items-center justify-between">
           <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
-            <%= link_to blog.title, "#", class: "hover:underline" %>
+            <%= link_to blog.title, blog, class: "hover:underline" %>
           </h4>
           <span class="text-gray-600 dark:text-gray-300 text-sm ml-1"><%= l(blog.created_at, formats: :long) %></span>
         </div>
