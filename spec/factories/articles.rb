@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :blog do
+  factory :article do
     title { Faker::Lorem.word }
     content { Faker::Lorem.paragraph }
   end

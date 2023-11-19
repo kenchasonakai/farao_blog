@@ -1,3 +1,3 @@
-class Blog < ApplicationRecord
+class Article < ApplicationRecord
   validates :title, presence: true
 end
